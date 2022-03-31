@@ -1,6 +1,8 @@
 import React, { useState } from "react";
+import BackDropRuntime from "./backDrop";
 
 import { makeStyles } from "@mui/styles";
+
 import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
 import MenuItem from "@mui/material/MenuItem";
@@ -8,7 +10,7 @@ import InputBase from "@mui/material/InputBase";
 import Paper from "@mui/material/Paper";
 import Select, { SelectChangeEvent } from "@mui/material/Select";
 import { observer } from "mobx-react";
-import { DataStoreImpl, DataStore } from "../Store/dataStore";
+import { DataStoreImpl } from "../Store/dataStore";
 import { SortFunctionImpl } from "../Store/sort_function";
 
 interface HomeProps {
@@ -56,7 +58,13 @@ const items: string[] = [
 const Home: React.FC<HomeProps> = observer(({ dataStore, sortFunction }) => {
   const classes = useStyles();
   const [size, setSize] = useState<string>("");
-  const [sortFunc, setSortFunc] = useState<string>("Bubble Sort");
+  const [sortFunc, setSortFunc] = useState<string>("Merge Sort");
+  const [isOpen, setIsOpen] = useState<boolean>(false);
+  const [runtime, setRuntime] = useState<number>(0);
+
+  function handleOpen() {
+    setIsOpen(!isOpen);
+  }
 
   function handleChangeSelect(event: SelectChangeEvent) {
     setSortFunc(event.target.value);
@@ -79,14 +87,14 @@ const Home: React.FC<HomeProps> = observer(({ dataStore, sortFunction }) => {
     var arr = createArray(parseInt(size));
 
     var startTime = performance.now();
-    arr = sortFunction.call_sort(sortFunc, arr);
+    sortFunction.call_sort(sortFunc, arr);
     var endTime = performance.now();
 
     const ms_time: number = endTime - startTime;
-
-    console.log(ms_time);
-    console.log(arr);
     dataStore.collect_data(sortFunc, parseInt(size), ms_time);
+    setSize("");
+    setRuntime(ms_time);
+    setIsOpen(true);
   }
 
   return (
@@ -124,6 +132,11 @@ const Home: React.FC<HomeProps> = observer(({ dataStore, sortFunction }) => {
           </Button>
         </div>
       </form>
+      <BackDropRuntime
+        isOpen={isOpen}
+        handleOpen={handleOpen}
+        runtime={runtime}
+      />
     </div>
   );
 });
