@@ -1,15 +1,20 @@
 import React from "react";
-import CssBaseline from "@mui/material/CssBaseline";
 import "./App.css";
-import Home from "./Components/home";
+import { Routes, Route } from "react-router-dom";
+import CssBaseline from "@mui/material/CssBaseline";
+
+import HomePage from "./Pages/Home";
+import HistoryPage from "./Pages/History";
 import { DataStore } from "./Store/dataStore";
-import { SortFunctionStore } from "./Store/sort_function";
 
 const App: React.FC = () => {
   return (
     <div>
-      <Home dataStore={DataStore} sortFunction={SortFunctionStore} />
       <CssBaseline />
+      <Routes>
+        <Route element={<HomePage />} path="/" />
+        <Route element={<HistoryPage />} path="/history" />
+      </Routes>
     </div>
   );
 };
