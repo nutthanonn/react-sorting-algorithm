@@ -55,8 +55,8 @@ const History: React.FC<HistoryProps> = observer(({ dataStore }) => {
               <TableCell component="th" scope="row">
                 {row.func_name}
               </TableCell>
-              <TableCell align="right">{row.size}</TableCell>
-              <TableCell align="right">{row.runtime}</TableCell>
+              <TableCell align="right">{row.size} items</TableCell>
+              <TableCell align="right">{row.runtime} ms</TableCell>
             </TableRow>
           ))}
         </TableBody>
