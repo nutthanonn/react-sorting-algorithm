@@ -7,7 +7,7 @@ interface dataProps {
 }
 
 export class DataStoreImpl {
-  @observable data: dataProps[] = [];
+  @observable Data: dataProps[] = [];
 
   constructor() {
     makeObservable(this);
@@ -15,7 +15,21 @@ export class DataStoreImpl {
 
   @action
   collect_data(func_name: string, size: number, runtime: number) {
-    this.data.push({ func_name, size, runtime });
+    const obj = { func_name, size, runtime };
+
+    const len = this.Data.length;
+    if (len === 0) {
+      this.Data.push(obj);
+      return;
+    }
+
+    for (var i = 0; i < len; i++) {
+      if (obj.size < this.Data[i].size) {
+        this.Data.splice(i, 0, obj);
+        return;
+      }
+    }
+    this.Data.push(obj);
   }
 }
 
