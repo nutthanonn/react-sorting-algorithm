@@ -18,12 +18,12 @@ interface HistoryProps {
 
 const useStyles = makeStyles({
   root: {
-    height: "100vh",
+    height: "92vh",
     background:
       "linear-gradient(to left bottom, #010059, #570d64, #892f6e, #b3577b, #d6828d, #e69893, #f4b09c, #ffc8a9, #ffd1a2, #ffdc9b, #ffe896, #fcf594)",
   },
   tableContent: {
-    marginTop: 90,
+    marginTop: 10,
     backgroundColor: "white",
     opacity: 0.8,
     borderRadius: 10,

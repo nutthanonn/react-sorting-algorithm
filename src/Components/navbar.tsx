@@ -12,7 +12,6 @@ import { DataStore } from "../Store/dataStore";
 const useStyles = makeStyles({
   root: {
     backgroundColor: "#FDBFB3",
-    position: "absolute",
     width: "100%",
     boxShadow:
       "rgba(50, 50, 93, 0.25) 0px 30px 60px -12px, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px",

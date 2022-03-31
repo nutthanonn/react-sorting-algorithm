@@ -30,6 +30,9 @@ const DrawerList: React.FC<DrawerListProps> = observer(
             <ListItem button onClick={() => navigate("/history")}>
               <ListItemText primary="History" />
             </ListItem>
+            <ListItem button onClick={() => navigate("/chart")}>
+              <ListItemText primary="Chart" />
+            </ListItem>
             <ListItem button onClick={() => generatePDF(dataStore.Data)}>
               <ListItemText primary="Report PDF" />
             </ListItem>
