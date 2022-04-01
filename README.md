@@ -1,47 +1,15 @@
-# Getting Started with Create React App
+[Sorting Website](https://react-sorting-algorithm.web.app/)
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Sorting Algorithm
 
-## Available Scripts
+เว็ปไซต์นี้สร้างขึ้นเพื่อ วิเคราะห์อัตราการเติบโตของฟังก์ชั่นหรือเรียกว่า BigO โดยทางเว็ปไซต์จะสุ่มตัวเลข ตั้งเเต่ 0 ถึง ขนาดของ Array นั้นๆ เวลาที่ได้อาจจะเเตกต่างกันเนื่องจากตัวเลขที่ต่างกัน
 
-In the project directory, you can run:
+## How to use
 
-### `npm start`
+ใส่ขนาดของ Array ที่ต้องการลงไป เเต่เมื่อใช้ Sort Algorithm ที่ไม่ใช่ Merge Sort ไม่ควรใส่ตัวเลขเกิน 100,000 เนื่องจากขนาด Array มีมากเเละ Algorithm ทำงานช้าเกินไป
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+### Feature
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-# react-sorting-algorithm
+- `สามารถดาวน์โหลด Report เป็นไฟล์ PDF ได้`
+- `สามารถดูกราฟอัตราการเติบโตของฟังน์ชั่น`
+- `สามารถดูประวัติการใช้งานได้`
